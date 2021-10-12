@@ -12,13 +12,15 @@ export default function Practice() {
 
     useEffect(() => {
 
-        window.addEventListener('resize', winddowResizeHanler)
+        // window.addEventListener('resize', winddowResizeHanler)
+
+        alert()
 
         return () => {
             console.log("cleard");
-            window.removeEventListener('resize');
+            // window.removeEventListener('resize');
         }
-    }, []);
+    }, );
 
 
 
