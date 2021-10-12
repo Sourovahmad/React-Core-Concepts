@@ -1,36 +1,43 @@
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function Practice() {
 
-    let array = [0,1,2,3,4,5,6,7,8,9,10];
-    const [Count, setCount] = useState(10)
+    const [Name, SetName] = useState("khan");
+    const [windowSize, setwindowSize] = useState(window.innerWidth);
+
+    const winddowResizeHanler = () =>{
+        setwindowSize(window.innerWidth);
+    }
+
+    useEffect(() => {
+
+        window.addEventListener('resize', winddowResizeHanler)
+
+        return () => {
+            console.log("cleard");
+            window.removeEventListener('resize');
+        }
+    }, []);
+
+
+
 
     return (
         <div>
-            <ul className="myUrl">
-                {
-                     array.map((el,i) =>
 
-                     i > 3 ?
-                     <li> {el}  </li>
-                    : ''
-                     )
-                }
-            </ul>
+            <button onClick={() => SetName("khan2")}> khan Two</button>
+            <button onClick={() => SetName("khan3")}> khan Two</button>
+            <button onClick={() => SetName("khan4")}> khan Two</button>
+            <button onClick={() => SetName("khan5")}> khan Two</button>
 
 
-            <div className="container" style={{ marginLeft:'40px' }}>
-                <div className="row">
-                    <div className="text-center" style={{ marginTop: '25px' }}>
-                        {Count}
-                    </div>
+            <pre> {Name} </pre>
 
 
 
-                    <button onClick> increase Counter</button>
-                </div>
-            </div>
+            <h3>{windowSize}</h3>
+
         </div>
     )
 }
