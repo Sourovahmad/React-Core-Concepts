@@ -1,33 +1,12 @@
 
 import './App.css';
-import Form from './Components/Form';
-import Practice from './Components/Practice';
-import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom'
-import AddData from './Components/AddData';
+import MaterialUi from './Components/MaterialUi/MaterialUi';
 
 
 function App() {
   return (
-
-
     <>
-
-
-    <Router>
-
-
-    <Switch>
-
-      <Route path='/students' component={Practice}/>
-      <Route path='/add' component={AddData}/>
-
-    </Switch>
-    </Router>
-
-    <div className="shrtcutLinks">
-        
-    </div>
-
+    <MaterialUi> </MaterialUi>
     </>
   );
 }
